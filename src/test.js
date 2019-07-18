@@ -49,7 +49,5 @@ const strobe = (del) => {
     wait(del);
   }
 }
-//strobe(20);
-//copMode(100);
+
 party(100);
-wait(2000);
