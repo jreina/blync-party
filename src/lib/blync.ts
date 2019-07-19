@@ -1,18 +1,19 @@
-const hid = require("node-hid");
+import { HID, devices } from "node-hid";
+import { BlyncWireless } from "./device";
 
-const Blync = {
-  getDevices: function() {
-    const devices = hid.devices();
-      
-    const blyncs = devices.filter(
+class BlyncStatic {
+  static getDevices() {
+    const hidDevices = devices();
+
+    const blyncs = hidDevices
+      .filter(
         ({ vendorId, productId }) => vendorId === 11277 && productId === 11
       )
-      .map(({path}) => new Blync.Device(new hid.HID(path)));
+      .map(({ path }) => new BlyncWireless(new HID(path)));
 
     return blyncs;
-  },
-
-  getDevice: function(index) {
+  }
+  static getDevice(index) {
     index = +index || 0;
 
     const devices = this.getDevices();
@@ -25,8 +26,6 @@ const Blync = {
 
     return devices[index];
   }
-};
+}
 
-Blync.Device = require("./device").Device;
-
-module.exports = Blync;
+export { BlyncStatic };
