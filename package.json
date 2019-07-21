@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node ./dist/main.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +16,7 @@
     "node-hid": "^0.7.9"
   },
   "devDependencies": {
+    "@types/node": "^12.6.8",
     "@types/node-hid": "^0.7.2",
     "typescript": "^3.5.3"
   }

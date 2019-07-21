@@ -5,7 +5,13 @@ import { IBlyncDevice } from "./IBlyncDevice";
 class BlyncWireless implements IBlyncDevice {
   constructor(private hidDevice: HID) {}
 
-  private _createBuffer({ red, green, blue, dim, blink }: IBlyncCommand) {
+  private _createBuffer({
+    red,
+    green,
+    blue,
+    dim,
+    blink
+  }: IBlyncCommand): Array<number> {
     let lightControl = 0b000000;
     // Bit0: 0 - Light On, 1 - Light Off
     // Bit1: 0 - No Dim (Full Brightness), 1 - Dim by 50%

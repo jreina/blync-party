@@ -1,5 +1,5 @@
 import { HID, devices } from "node-hid";
-import { BlyncWireless } from "./device";
+import { BlyncWireless } from "./BlyncWireless";
 
 class BlyncStatic {
   static getDevices() {
@@ -7,13 +7,15 @@ class BlyncStatic {
 
     const blyncs = hidDevices
       .filter(
-        ({ vendorId, productId }) => vendorId === 11277 && productId === 11
+        ({ vendorId, productId, path }) =>
+          vendorId === 11277 && productId === 11 && path
       )
+      .map(x => ({ ...x, path: x.path ? x.path : "" }))
       .map(({ path }) => new BlyncWireless(new HID(path)));
 
     return blyncs;
   }
-  static getDevice(index) {
+  static getDevice(index: number) {
     index = +index || 0;
 
     const devices = this.getDevices();
