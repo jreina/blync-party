@@ -13,11 +13,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-hid": "^0.7.9"
+    "bluebird": "^3.5.5",
+    "node-hid": "^0.7.9",
+    "ramda": "^0.26.1"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.27",
     "@types/node": "^12.6.8",
     "@types/node-hid": "^0.7.2",
+    "@types/ramda": "^0.26.16",
     "typescript": "^3.5.3"
   }
 }
