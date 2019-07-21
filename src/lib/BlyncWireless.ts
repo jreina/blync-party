@@ -50,9 +50,9 @@ class BlyncWireless implements IBlyncDevice {
     return buffer;
   }
 
-  async sendCommand(command: IBlyncCommand) {
+  sendCommand = async (command: IBlyncCommand) => {
     const buffer = this._createBuffer(command);
-    this.hidDevice.write(buffer);
+    return this.hidDevice.write(buffer);
   }
 }
 
