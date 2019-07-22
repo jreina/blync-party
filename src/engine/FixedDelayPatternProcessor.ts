@@ -1,12 +1,11 @@
-import { IPattern } from '../patterns/IPattern';
-import { IBlyncDevice } from '../lib/IBlyncDevice';
-import { IBlyncCommand } from '../lib/IBlyncCommand';
-import Bluebird from 'bluebird';
-import { Color } from '../patterns/Color';
-import * as R from 'ramda';
+import { IPattern } from "../patterns/IPattern";
+import { IBlyncDevice } from "../lib/IBlyncDevice";
+import Bluebird from "bluebird";
+import { Color } from "../patterns/Color";
+import { IPatternEngine } from "./IPatternEngine";
 
-export class FixedDelayPatternProcessor {
-  private static _createCommand([red, green, blue]: Color) {
+export class FixedDelayPatternProcessor implements IPatternEngine {
+  private _createCommand([red, green, blue]: Color) {
     return {
       red,
       green,
@@ -15,12 +14,20 @@ export class FixedDelayPatternProcessor {
       dim: false
     };
   }
-  static processPattern({ colors, delay }: IPattern, device: IBlyncDevice) {
-    if(typeof(colors) === 'function') throw new Error('`colors` must be an array of colors');
-    const colorFuncs = colors.map(this._createCommand).map(command => [
-      () => device.sendCommand(command),
-      () => Bluebird.delay(delay, 0)
-    ]).flat();
-    return Bluebird.mapSeries(colorFuncs, f => f());
+  async process({ colors, delay, loop }: IPattern, device: IBlyncDevice) {
+    if (typeof colors === "function")
+      throw new Error("`colors` must be an array of colors");
+
+    let index = 0;
+    while (true) {
+      if (index === colors.length) {
+        if (loop) index = 0;
+        else break;
+      }
+      await device.sendCommand(this._createCommand(colors[index]));
+      await Bluebird.delay(delay);
+      index++;
+    }
+    return 0;
   }
 }
