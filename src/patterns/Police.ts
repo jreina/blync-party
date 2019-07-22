@@ -1,9 +1,11 @@
-import { IPattern } from "./IPattern";
+import { IPattern } from './IPattern';
 
 const Police: IPattern = {
-  name: "Police",
+  name: 'Police',
   colors: [[255, 0, 0], [0, 0, 255]],
-  delay: 100
+  delay: 100,
+  loop: true,
+  colorFunc: _ => _
 };
 
 export { Police };

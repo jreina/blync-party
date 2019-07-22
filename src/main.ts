@@ -1,19 +1,20 @@
 import { BlyncStatic } from './lib/BlyncStatic';
 import { FixedDelayPatternProcessor } from './engine/FixedDelayPatternProcessor';
+import { FunctionPatternProcessor } from './engine/FunctionPatternProcessor';
 import { Color } from './patterns/Color';
+import { MoodRing } from './patterns/MoodRing';
 
-const range = Array(256)
-  .fill(0)
-  .map((_, i) => i);
-const colors = range.map<Color>(i => [i, 0, 255]);
 const blync = BlyncStatic.getDevice(0);
 (async function run() {
-  await FixedDelayPatternProcessor.processPattern(
-    {
-      colors,
-      delay: 50,
-      name: 'Mood Ring'
-    },
-    blync
-  );
+  // await FixedDelayPatternProcessor.processPattern(
+  //   {
+  //     colors,
+  //     delay: 50,
+  //     name: 'Mood Ring',
+  //     loop: true
+  //   },
+  //   blync
+  // );
+  FunctionPatternProcessor.setSeed([1, 0, 0]);
+  await FunctionPatternProcessor.process(MoodRing, blync);
 })();

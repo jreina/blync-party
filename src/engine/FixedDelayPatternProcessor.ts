@@ -16,6 +16,7 @@ export class FixedDelayPatternProcessor {
     };
   }
   static processPattern({ colors, delay }: IPattern, device: IBlyncDevice) {
+    if(typeof(colors) === 'function') throw new Error('`colors` must be an array of colors');
     const colorFuncs = colors.map(this._createCommand).map(command => [
       () => device.sendCommand(command),
       () => Bluebird.delay(delay, 0)
