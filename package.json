@@ -1,5 +1,5 @@
 {
-  "name": "cube",
+  "name": "blync-party",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "node ./dist/main.js"
+    "start": "node ./dist/cli/main.js"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +25,8 @@
     "@types/node-hid": "^0.7.2",
     "@types/ramda": "^0.26.16",
     "typescript": "^3.5.3"
+  },
+  "bin": {
+    "blync-party": "./dist/cli/main.js"
   }
 }
