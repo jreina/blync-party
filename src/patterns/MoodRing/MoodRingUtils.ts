@@ -1,7 +1,5 @@
-import { Color } from "../Color";
-import { ColorTransform } from "./ColorTransform";
-
-
+import { Color } from '../Color';
+import { ColorTransform } from './ColorTransform';
 
 const incrementRed: ColorTransform = ([r, b, g]: Color) => [r + 1, b, g];
 const decrementRed: ColorTransform = ([r, b, g]: Color) => [r - 1, b, g];

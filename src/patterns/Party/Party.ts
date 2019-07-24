@@ -1,8 +1,8 @@
-import { IPattern } from "../IPattern";
-import { Color } from "../Color";
+import { IPattern } from '../IPattern';
+import { Color } from '../Color';
 
 export class Party implements IPattern {
-  name = "Police";
+  name = 'Police';
   colors = [
     [255, 0, 0],
     [255, 127, 0],

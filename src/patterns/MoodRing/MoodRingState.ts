@@ -1,5 +1,5 @@
-import { TransformDirection } from "./TransformDirection";
-import { ColorTransform } from "./ColorTransform";
+import { TransformDirection } from './TransformDirection';
+import { ColorTransform } from './ColorTransform';
 
 export interface MoodRingState {
   direction: TransformDirection;

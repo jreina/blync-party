@@ -1,5 +1,5 @@
-import { HID, devices } from "node-hid";
-import { BlyncWireless } from "./BlyncWireless";
+import { HID, devices } from 'node-hid';
+import { BlyncWireless } from './BlyncWireless';
 
 class BlyncStatic {
   static getDevices() {
@@ -10,7 +10,7 @@ class BlyncStatic {
         ({ vendorId, productId, path }) =>
           vendorId === 11277 && productId === 11 && path
       )
-      .map(x => ({ ...x, path: x.path ? x.path : "" }))
+      .map(x => ({ ...x, path: x.path ? x.path : '' }))
       .map(({ path }) => new BlyncWireless(new HID(path)));
 
     return blyncs;
@@ -20,10 +20,10 @@ class BlyncStatic {
 
     const devices = this.getDevices();
     if (index < 0) {
-      throw new Error("Invalid device index");
+      throw new Error('Invalid device index');
     }
     if (index >= devices.length) {
-      throw new Error("Device index #" + index + " not found");
+      throw new Error('Device index #' + index + ' not found');
     }
 
     return devices[index];

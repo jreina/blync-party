@@ -1,7 +1,7 @@
-import { MoodRingState } from "./MoodRingState";
-import { TransformDirection } from "./TransformDirection";
-import { MoodRingUtils } from "./MoodRingUtils";
-import { Chance } from "chance";
+import { MoodRingState } from './MoodRingState';
+import { TransformDirection } from './TransformDirection';
+import { MoodRingUtils } from './MoodRingUtils';
+import { Chance } from 'chance';
 const chance = Chance.Chance(Math.random);
 
 const RedDescending: MoodRingState = {
@@ -47,12 +47,12 @@ const BlueAscending: MoodRingState = {
 };
 
 const Noop: MoodRingState = {
-    direction: TransformDirection.Up,
-    transform: color => color,
-    nextState(x) {
-        return findNextStartState(x);
-      }
-}
+  direction: TransformDirection.Up,
+  transform: color => color,
+  nextState(x) {
+    return findNextStartState(x);
+  }
+};
 
 export function findInitialState(): MoodRingState {
   return chance.pickone([

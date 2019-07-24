@@ -1,5 +1,5 @@
-import { Color } from "../patterns/Color";
-import { IBlyncCommand } from "../lib/IBlyncCommand";
+import { Color } from '../patterns/Color';
+import { IBlyncCommand } from '../lib/IBlyncCommand';
 
 export class CommandFactory {
   static fromColor([red, green, blue]: Color): IBlyncCommand {

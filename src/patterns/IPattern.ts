@@ -1,4 +1,4 @@
-import { Color } from "./Color";
+import { Color } from './Color';
 
 export interface IPattern {
   name: string;

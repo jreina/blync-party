@@ -1,3 +1,3 @@
-import { Color } from "../Color";
+import { Color } from '../Color';
 
 export type ColorTransform = (x: Color) => Color;

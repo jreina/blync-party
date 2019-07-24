@@ -1,4 +1,4 @@
-import { IBlyncDevice } from "../lib/IBlyncDevice";
+import { IBlyncDevice } from '../lib/IBlyncDevice';
 
 export function showColor(device: IBlyncDevice) {
   return function showColorClosure(red: number, green: number, blue: number) {

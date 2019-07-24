@@ -1,5 +1,5 @@
-import { IBlyncCommand } from "./IBlyncCommand";
+import { IBlyncCommand } from './IBlyncCommand';
 
 export interface IBlyncDevice {
-    sendCommand(command: IBlyncCommand): Promise<number>;
+  sendCommand(command: IBlyncCommand): Promise<number>;
 }

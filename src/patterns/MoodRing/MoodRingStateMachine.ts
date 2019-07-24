@@ -1,12 +1,12 @@
-import { Color } from "../Color";
-import { MoodRingState } from "./MoodRingState";
-import { findNextStartState } from "./MoodRingStates";
+import { Color } from '../Color';
+import { MoodRingState } from './MoodRingState';
+import { findNextStartState } from './MoodRingStates';
 
 export class MoodRingStateMachine {
   private _stateMachine: [MoodRingState, MoodRingState];
   private _runCount = 0;
   constructor() {
-    const a = findNextStartState()
+    const a = findNextStartState();
     const b = findNextStartState(a);
     this._stateMachine = [a, b];
   }

@@ -1,6 +1,6 @@
-import { HID } from "node-hid";
-import { IBlyncCommand } from "./IBlyncCommand";
-import { IBlyncDevice } from "./IBlyncDevice";
+import { HID } from 'node-hid';
+import { IBlyncCommand } from './IBlyncCommand';
+import { IBlyncDevice } from './IBlyncDevice';
 
 class BlyncWireless implements IBlyncDevice {
   constructor(private hidDevice: HID) {}
@@ -53,7 +53,7 @@ class BlyncWireless implements IBlyncDevice {
   sendCommand = async (command: IBlyncCommand) => {
     const buffer = this._createBuffer(command);
     return this.hidDevice.write(buffer);
-  }
+  };
 }
 
 export { BlyncWireless };

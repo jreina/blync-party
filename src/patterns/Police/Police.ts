@@ -6,5 +6,4 @@ export class Police implements IPattern {
   colors = [[255, 0, 0] as Color, [0, 0, 255] as Color];
   delay = 100;
   loop = true;
-};
-
+}

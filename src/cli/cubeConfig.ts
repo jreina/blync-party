@@ -1,33 +1,33 @@
-import { MoodRing, Police, Party } from "../patterns";
-import { FunctionPatternProcessor } from "../engine/FunctionPatternProcessor";
-import { FixedDelayPatternProcessor } from "../engine/FixedDelayPatternProcessor";
-import { CubeOptions } from "./CubeOptions";
+import { MoodRing, Police, Party } from '../patterns';
+import { FunctionPatternProcessor } from '../engine/FunctionPatternProcessor';
+import { FixedDelayPatternProcessor } from '../engine/FixedDelayPatternProcessor';
+import { CubeOptions } from './CubeOptions';
 
 export const options: Map<string, CubeOptions> = new Map([
   [
-    "mood",
+    'mood',
     {
       pattern: new MoodRing(),
       engine: new FunctionPatternProcessor(),
-      name: "mood",
-      description: "Chill mode activated!"
+      name: 'mood',
+      description: 'Chill mode activated!'
     }
   ],
   [
-    "police",
+    'police',
     {
       pattern: new Police(),
       engine: new FixedDelayPatternProcessor(),
-      name: "police",
-      description: "Tha block is hot!"
+      name: 'police',
+      description: 'Tha block is hot!'
     }
   ],
   [
-    "party",
+    'party',
     {
       pattern: new Party(),
       engine: new FixedDelayPatternProcessor(),
-      name: "party",
+      name: 'party',
       description: "Let's party boiiiiii!!!1!"
     }
   ]
