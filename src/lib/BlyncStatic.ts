@@ -6,10 +6,7 @@ class BlyncStatic {
     const hidDevices = devices();
 
     const blyncs = hidDevices
-      .filter(
-        ({ vendorId, productId, path }) =>
-          vendorId === 11277 && productId === 11 && path
-      )
+      .filter(({ vendorId, productId, path }) => vendorId === 11277 && path)
       .map(x => ({ ...x, path: x.path ? x.path : '' }))
       .map(({ path }) => new BlyncWireless(new HID(path)));
 
