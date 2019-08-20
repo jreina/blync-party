@@ -1,4 +1,5 @@
 # blync-party
+![npm](https://img.shields.io/npm/v/blync-party)
 
 ## Why?
 Cause there ain't no party like a Blync party!
