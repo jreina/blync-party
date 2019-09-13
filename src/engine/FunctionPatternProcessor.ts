@@ -10,6 +10,7 @@ export class FunctionPatternProcessor implements IPatternEngine {
   private _run = true;
 
   async process(pattern: IPattern, device: IBlyncDevice): Promise<number> {
+    this._run = true;
     if (Array.isArray(pattern.colors))
       throw new Error('`colors` must be a function!');
     while (this._current !== null && this._run) {

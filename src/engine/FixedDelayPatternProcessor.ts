@@ -16,6 +16,7 @@ export class FixedDelayPatternProcessor implements IPatternEngine {
   }
   private _run = true;
   async process({ colors, delay, loop }: IPattern, device: IBlyncDevice) {
+    this._run = true;
     if (typeof colors === 'function')
       throw new Error('`colors` must be an array of colors');
 
