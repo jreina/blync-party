@@ -4,7 +4,7 @@ import { BlyncStatic } from '../lib/BlyncStatic';
 import { options } from './cubeConfig';
 import { CubeOptions } from './CubeOptions';
 import { showMenu } from './showMenu';
-import { tryProcessSolidColor } from './solidColors';
+import { tryProcessSolidColor } from '../util/solidColors';
 import { FixedDelayPatternProcessor } from '../engine/FixedDelayPatternProcessor';
 import { SolidColor } from '../patterns/Solid/SolidColor';
 import { Color } from '../patterns/Color';
