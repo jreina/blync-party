@@ -10,5 +10,5 @@ export { IBlyncCommand } from './lib/IBlyncCommand';
 export { IBlyncDevice } from './lib/IBlyncDevice';
 export { CommandFactory } from './util/commandFactory';
 export { tryProcessSolidColor } from './util/solidColors';
-import * as Patterns from './Patterns';
+import * as Patterns from './patterns';
 export { Patterns };
