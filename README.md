@@ -18,6 +18,8 @@ Choose from a pre-built pattern, color name, or hex code. Color names can be fou
  * party
  * police
  * mood
+ * deadmau5
+ * bitcoin
 
 ## License
 MIT
