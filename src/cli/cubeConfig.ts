@@ -1,4 +1,4 @@
-import { MoodRing, Police, Party } from '../patterns';
+import { MoodRing, Police, Party, Bitcoin } from '../patterns';
 import { FunctionPatternProcessor } from '../engine/FunctionPatternProcessor';
 import { FixedDelayPatternProcessor } from '../engine/FixedDelayPatternProcessor';
 import { CubeOptions } from './CubeOptions';
@@ -29,6 +29,15 @@ export const options: Map<string, CubeOptions> = new Map([
       engine: new FixedDelayPatternProcessor(),
       name: 'party',
       description: "Let's party boiiiiii!!!1!"
+    }
+  ],
+  [
+    'bitcoin',
+    {
+      pattern: new Bitcoin(),
+      engine: new FixedDelayPatternProcessor(),
+      name: 'bitcoin',
+      description: "Let's ride the roller coaster 🎢"
     }
   ]
 ]);

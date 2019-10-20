@@ -33,6 +33,7 @@
     "bluebird": "^3.5.5",
     "chance": "^1.0.18",
     "color-name": "^1.1.4",
+    "got": "^9.6.0",
     "node-hid": "^0.7.9",
     "ramda": "^0.26.1"
   },
@@ -40,6 +41,7 @@
     "@types/bluebird": "^3.5.27",
     "@types/chance": "^1.0.5",
     "@types/color-name": "^1.1.1",
+    "@types/got": "^9.6.7",
     "@types/node": "^12.6.8",
     "@types/node-hid": "^0.7.2",
     "@types/ramda": "^0.26.16",
