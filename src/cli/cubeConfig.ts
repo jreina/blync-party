@@ -1,4 +1,4 @@
-import { MoodRing, Police, Party, Deadmau5 } from '../patterns';
+import { MoodRing, Police, Party, Deadmau5, SP } from '../patterns';
 import { FunctionPatternProcessor } from '../engine/FunctionPatternProcessor';
 import { FixedDelayPatternProcessor } from '../engine/FixedDelayPatternProcessor';
 import { CubeOptions } from './CubeOptions';
@@ -38,6 +38,15 @@ export const options: Map<string, CubeOptions> = new Map([
       engine: new FixedDelayPatternProcessor(),
       name: 'deadmau5',
       description: 'LET US GET LIT'
+    }
+  ],
+  [
+    'sp',
+    {
+      pattern: new SP(),
+      engine: new FixedDelayPatternProcessor(),
+      name: 'sp',
+      description: 'smoooooth process!'
     }
   ]
 ]);

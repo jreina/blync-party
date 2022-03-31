@@ -1,6 +1,6 @@
 import { CubeOptions } from '../cli/CubeOptions';
 import { FixedDelayPatternProcessor } from '../engine/FixedDelayPatternProcessor';
-import { Police, Party, MoodRing } from '../patterns';
+import { Police, Party, MoodRing, Deadmau5, SP } from '../patterns';
 import { FunctionPatternProcessor } from '../engine/FunctionPatternProcessor';
 import { Color } from '../patterns/Color';
 import { IBlyncDevice } from '../lib/IBlyncDevice';
@@ -35,6 +35,24 @@ export class BlyncParty {
         engine: new FixedDelayPatternProcessor(),
         name: 'party',
         description: "Let's party boiiiiii!!!1!"
+      }
+    ],
+    [
+      'deadmau5',
+      {
+        pattern: new Deadmau5(),
+        engine: new FixedDelayPatternProcessor(),
+        name: 'deadmau5',
+        description: "Let's get LIT!"
+      }
+    ],
+    [
+      'sp',
+      {
+        pattern: new SP(),
+        engine: new FixedDelayPatternProcessor(),
+        name: 'sp',
+        description: 'Smoooooooth Processing!'
       }
     ]
   ]);
