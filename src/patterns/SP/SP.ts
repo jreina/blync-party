@@ -13,6 +13,6 @@ export class SP implements IPattern {
     [107, 130, 199] as Color,
     [143, 148, 163] as Color
   ];
-  delay = 75;
+  delay = 275;
   loop = true;
 }
